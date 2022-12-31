@@ -21,6 +21,7 @@ app.get("/", (req, res) => {
   const __dirname = path.dirname(fileURLToPath(import.meta.url));
   res.sendFile(path.join(__dirname, "/draft/draft.html"));
 });
+
 // Routes
 import placeRouter from "./routes/place.js";
 app.use("/api/v2/place", placeRouter);

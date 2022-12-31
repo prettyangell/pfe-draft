@@ -11,7 +11,8 @@ function fetchPlacesFromDB() {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-    });
+    })
+    .catch((error) => console.log(`There is an error: ${error}`));
 }
 
 document.addEventListener("DOMContentLoaded", fetchPlacesFromDB, false);
