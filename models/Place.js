@@ -12,4 +12,4 @@ const placeSchema = new mongoose.Schema({
 });
 
 
-export default mongoose.model("Place", placeSchema);
+export default mongoose.model("Place", placeSchema);//place hna wchnou houwa ? TABLE TE3 db

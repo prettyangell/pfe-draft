@@ -8,16 +8,16 @@ export const getPlaces = async (req, res) => {
   } catch (error) {
     res.send({
       error: true,
-      message: "The is Error fi moustawa Place collection",
+      message: "The is Error fi moustawa Place collectionS",
     });
   }
 };
 
 export const getPlaceById = async (req, res) => {
   try {
-    const id = req.params.id;
+    const lol= req.params.id;
 
-    const place = await Place.find({ _id: id });
+    const place = await Place.find({ name: lol });
 
     if (!place) {
       res.send({ message: "This Place don't exist" });
@@ -44,15 +44,15 @@ export const createPlace = async (req, res) => {
   }
 };
 
-/************** PUT *************/
+/** PUT */
 export const updatePlace = async (req, res) => {
   try {
     const id = req.params.id;
-    const { name, status } = req.body;
+    const { status } = req.body;
 
     const place = await Place.findOneAndUpdate(
-      { _id: id },
-      { name, status },
+      { name: id },
+      { status },
       { new: true }
     );
 
@@ -61,9 +61,9 @@ export const updatePlace = async (req, res) => {
       message: `Place with id : ${place._id} updated with succes`,
     });
   } catch (error) {
-    res.send({ message: "You can't update it hbb" });
+    res.send({ message: "You can't update it " });
   }
-};
+}; 
 
 /************** DELETE *************/
 export const deletePlace = async (req, res) => {
